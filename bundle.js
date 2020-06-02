@@ -5,12 +5,17 @@ function palindromeTester(event) {
   event.preventDefault();
 
   let phrase = new Phrase(event.target.phrase.value);
-  let palindromeResult = document.querySelector("#palindromeResult");
+  let palindromeResults = document.querySelector("#palindromeResults");
+  
+  document.querySelector("textarea").value = "";
+  document.querySelector("textarea").focus();
 
   if (phrase.palindrome()) {
-    palindromeResult.innerHTML = `"${phrase.content}" is a palindrome!`;
+    palindromeResults.innerHTML = `${palindromeResults.innerHTML}
+                                   <p class="palindrome">✔︎   "${phrase.content}" is a palindrome!</p>`;
   } else {
-    palindromeResult.innerHTML = `"${phrase.content}" is not a palindrome.`;
+    palindromeResults.innerHTML = `${palindromeResults.innerHTML}
+                                   <p>❌   "${phrase.content}" is not a palindrome.</p>`;
   }
 }
 

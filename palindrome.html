@@ -4,26 +4,67 @@
     <title>Palindrome Tester</title>
     <meta charset="utf-8">
     <style>
+      body {
+        font-size: 1.2em;
+      }
+      .container {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+      }
+
+      button {
+        background: #444;
+        border: none;
+        border-radius: 70px;
+        color: #ccc;
+        font-size: 16px;
+        margin-top: 1em;
+        padding: 16px 32px;
+        text-transform: uppercase;
+        text-align: center;
+        text-decoration: none;
+        transition-duration: 0.4s;
+        /*display: inline-block;*/
+        /*text-decoration: none;*/
+        /*margin: 4px 2px;*/
+        /*cursor: pointer;*/
+        
+      }
+      
+      button:hover {
+        background-color: #008CBA;
+        color: white; }
+      
+      .palindrome {
+        color: #89C65F;
+      }
+
       @media (prefers-color-scheme: dark) {
         body {
           background: #1a1a1a;
           color: #ccc;
-        } 
+        }
+      } 
     </style>
     <script src="bundle.js"></script>
   </head>
   <body>
-    <h1>Palindrome Tester</h1>
+    <div class="container">
+      <h1>Palindrome Tester</h1>
 
-    <form id="palindromeTester">
-      <textarea name="phrase" rows="10" cols="30"></textarea>
-      <br>
-      <button type="submit">Is it a palindrome?</button>
-    </form>
+      <form id="palindromeTester">
+        <textarea name="phrase" rows="10" cols="30"></textarea>
+        <br>
+        <button type="submit">Is it a palindrome?</button>
+      </form>
 
-    <h2>Result</h2>
+      <h2>Results</h2>
 
-    <p id="palindromeResult"></p>
+      <div id="palindromeResults">
 
+      </div>
+      
+    </div>
   </body>
 </html>
