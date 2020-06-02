@@ -22,6 +22,11 @@ describe("Phrase", function() {
       let punctuatedPalindrome = new Phrase("Madam, I'm Adam.");
       assert.strictEqual(punctuatedPalindrome.letters(), "MadamImAdam");
     });
+
+    it("should return false for zero length words", function() {
+      let zeroLengthPalindrome = new Phrase("");
+      assert(!zeroLengthPalindrome.palindrome());
+    });
   });  
   
   describe("#letters", function() {
