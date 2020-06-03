@@ -1,0 +1,20 @@
+#!/usr/local/bin/node
+let Phrase = require("astroud-palindrome");
+let urllib = require('urllib');
+let url = 'https://cdn.learnenough.com/phrases.txt';
+
+urllib.request(url, { followRedirect: true }, function (err, data, res) {
+  let text = data.toString();
+
+  text.split("\n").forEach(function(line) {
+    let phrase = new Phrase(line);
+    if (phrase.palindrome()) {
+      console.log('Found One!', line);
+    }
+  });
+
+  // console.log('body:', data.toString());
+});
+
+
+
