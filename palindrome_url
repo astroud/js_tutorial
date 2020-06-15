@@ -13,7 +13,32 @@ urllib.request(url, { followRedirect: true }, function (err, data, res) {
     }
   });
 
-  // console.log('body:', data.toString());
+  // 10.2.1 Exercise: Filter method
+  console.log("Filter Method:");
+
+  // text.split("\n").filter(fline => Phrase(fline).palindrome());
+
+  console.log(text.split("\n").filter(fline => true));
+
+  text.split("\n").forEach(function(line) {
+    let phrase = new Phrase(line);
+    if (phrase.palindrome()) {
+      console.log('Found One!', line);
+    }
+  });
+
+  // forEach(function(line) {
+  //   let phrase = new Phrase(line);
+  //   if (phrase.palindrome()) {
+  //     console.log('Found One!', line);
+  //   }
+  // });
+
+  // let phraseArray = text.split("\n");
+  // let filterOutput = phraseArray.filter(line => Phrase(line).palindrome);
+  // console.log(filterOutput.toString());
+
+  console.log("End of Filter Method:");
 });
 
 
