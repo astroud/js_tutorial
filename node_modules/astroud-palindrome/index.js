@@ -27,8 +27,9 @@ function Phrase(content) {
   }
 
   // Returns true if the phrase is a palindrome, false otherwise.
+  // Palindromes must be at least two characters
   this.palindrome = function palindrome() {
-    if (this.letters()) {
+    if (this.letters() && this.letters().length > 1) {
       return this.processedContent() === this.processedContent().reverse();
     }
     else {

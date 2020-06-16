@@ -9,9 +9,13 @@ function palindromeTester(event) {
   document.querySelector("textarea").value = "";
   document.querySelector("textarea").focus();
 
-  if (phrase.palindrome()) {
+  if (phrase.content.length < 2) {
     palindromeResults.innerHTML = `${palindromeResults.innerHTML}
-                                   <p class="palindrome">✔︎   "${phrase.content}" is a palindrome!</p>`;
+                                  <p>❌   "${phrase.content}" is too short and is not a palindrome.</p>`;
+  }
+  else if (phrase.palindrome()) {
+  palindromeResults.innerHTML = `${palindromeResults.innerHTML}
+                                  <p class="palindrome">✔︎   "${phrase.content}" is a palindrome!</p>`;
   } else {
     palindromeResults.innerHTML = `${palindromeResults.innerHTML}
                                    <p>❌   "${phrase.content}" is not a palindrome.</p>`;

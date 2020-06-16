@@ -27,6 +27,11 @@ describe("Phrase", function() {
       let zeroLengthPalindrome = new Phrase("");
       assert(!zeroLengthPalindrome.palindrome());
     });
+
+    it("should return false for 1 length words", function() {
+      let oneLengthPalindrome = new Phrase("a");
+      assert(!oneLengthPalindrome.palindrome());
+    });
   });  
   
   describe("#letters", function() {
